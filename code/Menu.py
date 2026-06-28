@@ -19,7 +19,7 @@ class Menu:
         pygame.mixer_music.load('./asset/Menu.mp3')
         pygame.mixer_music.play(-1)
         while True:
-            # DRAW IMAGES
+            # DRAW IMAGES AND TEXT
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(50, "Mountain", C_ORANGE, ((WIN_WIDTH / 2), 70))
             self.menu_text(50, "Shooter", C_ORANGE, ((WIN_WIDTH / 2), 120))
@@ -34,8 +34,8 @@ class Menu:
             # Check for all events
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()  # Close Window
-                    quit()  # end pygame
+                    pygame.quit()  # Close window
+                    quit()  # End pygame
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_DOWN:  # DOWN KEY
                         if menu_option < len(MENU_OPTION) - 1:
